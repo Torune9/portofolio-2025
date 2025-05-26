@@ -1,6 +1,5 @@
 <template>
-  <Loading v-if="!isLoading" @loading-finish="finish"/>
-  <div id="main" class="relative font-manrope text-primary" v-else>
+  <div id="main" class="relative font-manrope text-primary">
     <NavBar @jump-to-section="handleJumpToSection"/>
     <main id="wrapper" class="bg-light-gray">
       <div id="content" class="flex flex-col">
@@ -28,7 +27,6 @@ import Project from './components/Project.vue';
 import Experience from './components/Experience.vue';
 import Sertified from './components/Sertified.vue';
 import Footer from './components/Footer.vue';
-import Loading from './components/util/Loading.vue';
 
 let scrollSmoother = null;
 
