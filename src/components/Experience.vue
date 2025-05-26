@@ -8,7 +8,7 @@
                     <h1 class="text-2xl font-bold">{{ exp.role }}</h1>
                     <h2 class="text-lg">{{ exp.place }}</h2>
                 </div>
-                <p class="text-sm">{{ exp.description }}</p>
+                <p class="text-sm lg:max-w-1/2">{{ exp.description }}</p>
                 <div class="space-x-4 space-y-2 text-xs">
                     <span v-for="t in exp.tech" class="inline-block bg-warm-gray rounded-full px-4 py-1 capitalize">
                         {{ t }}
