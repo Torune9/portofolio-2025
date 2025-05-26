@@ -14,7 +14,7 @@
                 <div class="flex justify-between gap-x-2 w-full items-center">
                     <p class="text-sm">{{ p.description }}</p>
                     <button class="h-10 w-10 shrink-0" v-if="p.link">
-                        <a :href="p.link"
+                        <a :href="p.link" target="_blank"
                             class="bg-warm-gray hover:bg-light-gray transition-colors duration-500 h-full w-full rounded-full flex justify-center items-center">
                             <i class="pi pi-arrow-up-right"></i>
                         </a>
