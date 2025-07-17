@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-soft-ivory p-4 my-10">
+    <section class="p-4 my-10">
         <div class="flex flex-col gap-y-6 gap-x-4 py-2 items-center md:flex-row lg:justify-between" id="about-wrapper">
             <!-- Text Section -->
             <div class="space-y-4">
@@ -19,12 +19,8 @@
 
             <!-- Image Section -->
             <div class="h-96 w-80 overflow-hidden bg-warm-gray relative group md:w-80 md:h-96 lg:w-1/2 lg:h-[500px] md:shrink-0"
-                id="img-wrapper" @click="() => isTouched = !isTouched">
-                <img src="@/assets/img/me.png" alt="profile-image" :class="[
-                    'grayscale-100 blur-xs transition duration-500 w-full h-full object-cover object-top',
-                    isTouched ? 'grayscale-0 blur-none' : '',
-                    'group-hover:grayscale-0 group-hover:blur-none'
-                ]" />
+                id="img-wrapper">
+                <img src="@/assets/img/me.png" alt="profile-image" />
             </div>
         </div>
     </section>
