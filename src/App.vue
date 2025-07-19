@@ -30,10 +30,6 @@ import Footer from './components/Footer.vue';
 
 let scrollSmoother = null;
 
-const isLoading = ref(false)
-
-const finish = (data) => isLoading.value = data
-
 const handleJumpToSection = (sectionId) => {
   
   if (scrollSmoother) {

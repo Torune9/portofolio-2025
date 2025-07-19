@@ -1,6 +1,5 @@
 <template>
-    <section>
-        <h1 class="text-5xl py-8 px-4">Sertified</h1>
+    <section class="pt-10 lg:pt-24">
         <div>
             <div v-for="(img,i) in images" class="h-dvh relative overflow-hidden wrapper-certif bg-primary">
                 <h1 class="text-soft-ivory text-9xl p-2 absolute bottom-0 right-0 item">{{ i }}</h1>

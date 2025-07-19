@@ -1,16 +1,16 @@
 <template>
-    <section>
-        <div class="h-dvh flex flex-col justify-center relative px-4 overflow-hidden">
-            <div class="space-y-4 h-full flex flex-col justify-center">
-                <h1 class="text-6xl split">Rahman Nurhayadi</h1>
-                <h2 class="w-fit text-2xl bg-soft-ivory px-4 py-2 rounded-full badge">Web Developer</h2>
+    <section class="px-4 lg:px-16 min-h-screen">
+        <div class="min-h-screen grid">
+            <div class="flex flex-col gap-y-4 box-border py-24">
+                <h1 class="text-7xl lg:text-9xl split">Rahman<br>Nurhayadi</h1>
+                <h2 class="text-3xl bg-soft-ivory w-max rounded-full py-2 px-4 badge">Web Developer</h2>
             </div>
-            <div class="flex flex-col items-end">
-                <p class="text-3xl text-end split lg:text-4xl/snug lg:w-1/2">
-                    Turning ideas into interactive digital products.
-                </p>
+            <div class="flex flex-col justify-end">
+                <h3 class="text-4xl text-end lg:text-5xl split">
+                    Turning ideas <br> into interactive digital products.
+                </h3>
                 <Contact
-                    :class-plus="'flex justify-center items-center h-12 w-12 rounded-full bg-soft-ivory hover:bg-warm-gray hover:text-soft-ivory transition-color duration-500'" />
+                    :class-plus="'flex justify-center items-center h-12 w-12 rounded-full bg-soft-ivory hover:bg-primary hover:text-soft-ivory transition-color duration-500'" />
             </div>
         </div>
     </section>
@@ -28,10 +28,10 @@ onMounted(() => {
         mask: "lines",
     })
 
-    gsap.from('.badge',{
-        x : -100,
-        opacity : 0,
-        duration : 1
+    gsap.from('.badge', {
+        x: -100,
+        opacity: 0,
+        duration: 1
     })
     gsap.from(split.lines, {
         y: 100,

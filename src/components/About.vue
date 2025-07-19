@@ -1,26 +1,26 @@
 <template>
-    <section class="p-4 my-10">
-        <div class="flex flex-col gap-y-6 gap-x-4 py-2 items-center md:flex-row lg:justify-between" id="about-wrapper">
+    <section class="p-4 lg:px-16 py-10 lg:py-24 min-h-screen">
+        <div class="flex flex-col gap-y-6 gap-x-20 py-2 md:flex-row lg:justify-between" id="about-wrapper">
             <!-- Text Section -->
-            <div class="space-y-4">
-                <h1 class="text-5xl w-full py-2">About Me</h1>
-                <p>
+            <div class="grid lg:grid-rows-2 gap-2">
+                <h1 class="text-5xl w-full py-2 lg:text-8xl self-center ">About Me</h1>
+                <p class="lg:indent-4 text-justify">
                     I’m a fresh graduate in Information Technology, having completed my degree in November 2024. I'm
                     passionate
-                    about <strong>building impactful and efficient web applications</strong>, with a strong focus on
+                    about <span class="font-bold">building impactful and efficient web applications</span>, with a strong focus on
                     modern
-                    JavaScript technologies. I specialize in using <strong>Vue.js</strong> for frontend development and
-                    <strong>Express.js</strong> for backend services. Additionally, I have working knowledge of
-                    <strong>PHP and Laravel</strong>, allowing me to adapt to various tech stacks. I'm eager to grow as
+                    JavaScript technologies. I specialize in using <span class="font-bold">Vue.js</span> for frontend development and
+                    <span class="font-bold">Express.js</span> for backend services. Additionally, I have working knowledge of
+                   <span class="font-bold"> PHP and Laravel</span>, allowing me to adapt to various tech stacks. I'm eager to grow as
                     a
                     developer, collaborate with others, and contribute to creating user-centered digital experiences.
                 </p>
             </div>
 
             <!-- Image Section -->
-            <div class="h-96 w-80 overflow-hidden bg-warm-gray relative group md:w-80 md:h-96 lg:w-1/2 lg:h-[500px] md:shrink-0"
+            <div class="h-80 w-full overflow-hidden bg-warm-gray relative group  md:w-80 lg:w-1/2 lg:h-[500px] md:shrink-0"
                 id="img-wrapper">
-                <img src="@/assets/img/me.png" alt="profile-image" />
+                <img src="@/assets/img/me.png" alt="profile-image"/>
             </div>
         </div>
     </section>

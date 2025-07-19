@@ -1,31 +1,37 @@
 <template>
-    <section class="z-20 relative px-4 bg-soft-ivory overflow-hidden my-10 p-wrapper">
-        <h1 class="text-5xl py-6" id="p-heading">Projects</h1>
-        <div class="grid md:grid-cols-2 gap-y-4 py-4 justify-items-center">
-            <div v-for="(p, i) in projects"
-                class="bg-soft-ivory p-4 rounded-md min-h-96 border flex flex-col justify-center gap-y-6 overflow-hidden project-card md:w-96">
-                <div>
-                    <img :src="p.image" alt="project-image" class="w-full h-full object-contain">
-                </div>
-                <div class="inline-flex w-full justify-between items-center">
-                    <h4 class="capitalize text-2xl">{{ p.name }}</h4>
-                    <p>{{ p.year }}</p>
-                </div>
-                <div class="flex justify-between gap-x-2 w-full items-center">
-                    <p class="text-sm">{{ p.description }}</p>
-                    <button class="h-10 w-10 shrink-0" v-if="p.link">
-                        <a :href="p.link" target="_blank"
-                            class="bg-warm-gray hover:bg-light-gray transition-colors duration-500 h-full w-full rounded-full flex justify-center items-center">
-                            <i class="pi pi-arrow-up-right"></i>
-                        </a>
-                    </button>
-                    <small v-else class="text-red-600">
-                        deployment inactive
-                    </small>
-                </div>
-                <div class="space-x-4">
-                    <span v-for="t in p.tech" class="border p-1 text-sm rounded-md">{{ t }}</span>
-                </div>
+    <section class="px-4 lg:px-16 py-10 lg:py-24 min-h-screen">
+        <div class="flex flex-col gap-y-8">
+            <!-- Title -->
+            <h1 class="text-5xl lg:text-8xl" id="p-heading">Projects</h1>
+            <!-- Wrapper -->
+            <div class="grid gap-8 md:grid-cols-2">
+                <!-- Project -->
+               <div v-for="p in projects" :key="p.name" class="flex flex-col gap-y-4">
+                <!-- Image -->
+                    <div class="w-full rounded-lg overflow-hidden shadow-sm cursor-pointer">
+                        <img :src="p.image" alt="project-image" class="w-full h-full object-bottom">
+                    </div>
+                    <!-- Info -->
+                    <div class="flex flex-row">
+                       <div class="w-full space-y-4">
+                         <h1 class="capitalize font-semibold text-3xl">
+                            {{ p.name }}
+                        </h1>
+                        <h3>
+                            {{ p.year }}
+                        </h3>
+                       </div>
+                       <button class="h-10 w-10 shrink-0" v-if="p.link">
+                            <a :href="p.link" target="_blank"
+                                class="bg-primary text-soft-ivory hover:bg-light-gray transition-color hover:text-primary duration-500 h-full w-full rounded-full flex justify-center items-center">
+                                <i class="pi pi-arrow-up-right"></i>
+                            </a>
+                        </button>
+                        <p v-else class="bg-red-700 flex items-center text-center text-xs rounded-md h-max py-1 px-2 text-soft-ivory">
+                           Deactivate
+                        </p>
+                    </div>
+               </div>
             </div>
         </div>
     </section>
@@ -92,47 +98,4 @@ const projects = [
     },
 
 ]
-
-onMounted(() => {
-    const cards = document.querySelectorAll('.project-card')
-   
-    gsap.from('.p-wrapper', {
-        opacity: 0,
-        duration: .8,
-        scrollTrigger: {
-            trigger: '#p-heading',
-            scrub: true,
-            start: "top center",
-            end: "bottom center"
-        }
-    })
-    gsap.from('#p-heading', {
-        x: -100,
-        opacity: 0,
-        duration: .8,
-        scrollTrigger: {
-            trigger: '#p-heading',
-            scrub: true,
-            start: "top center",
-            end: "bottom center"
-        }
-    })
-
-    cards.forEach((el, i) => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                scrub: true,
-                start: "top center",
-                end: "center center"
-            },
-            x: i % 2 == 0 ? 100 : -100,
-            duration: .5,
-            opacity: 0
-        })
-    })
-
-
-})
-
 </script>

@@ -9,8 +9,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // ScrollSmoother requires ScrollTrigger
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from "gsap/SplitText";
+import { Flip } from 'gsap/Flip';
 
-gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText);
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother,SplitText,Flip);
 
 const app = createApp(App)
 
