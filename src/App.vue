@@ -1,12 +1,13 @@
 <template>
   <div id="main" class="relative font-manrope text-primary">
+    <Modal :data="dataProject" :is-active="isActive" @close-modal="closeModal"/>
     <NavBar @jump-to-section="handleJumpToSection"/>
     <main id="wrapper" class="bg-light-gray">
       <div id="content" class="flex flex-col">
         <Home id="landing"/>
         <About id="about"/>
         <Skill id="skill"/>
-        <Project id="projects"/>
+        <Project id="projects" @send-project="getProject"/>
         <Experience id="exp"/>
         <Sertified />
         <Footer />
@@ -27,8 +28,23 @@ import Project from './components/Project.vue';
 import Experience from './components/Experience.vue';
 import Sertified from './components/Sertified.vue';
 import Footer from './components/Footer.vue';
+import Modal from './components/util/Modal.vue';
+
+const dataProject = ref(null)
+const isActive = ref(false)
 
 let scrollSmoother = null;
+
+const closeModal = (data)=>{
+  isActive.value = data
+}
+const getProject = (data) => {   
+  dataProject.value = data
+
+  if (data) {
+    isActive.value = !isActive.value
+  }
+}
 
 const handleJumpToSection = (sectionId) => {
   
