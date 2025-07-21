@@ -1,6 +1,6 @@
 <template>
     <Transition name="modal">
-        <div class="h-screen w-screen flex justify-center items-center fixed z-50 px-4 pr-10 box-border backdrop-blur-sm"
+        <div class="h-screen w-screen flex justify-center items-center fixed z-50 px-4 box-border backdrop-blur-sm"
             @click="closeModal" v-if="isActive">
             <div
                 class="bg-white/50 backdrop-blur-md min-h-80 p-4 sm:p-8 shadow-lg rounded-md flex flex-col gap-y-4 sm:w-3/4 md:w-2/3 lg:w-1/2">
