@@ -1,6 +1,6 @@
 <template>
     <nav ref="menuWrapper"
-        class="z-50 left-1/2 -translate-x-1/2 fixed shadow-sm p-3 top-2 max-lg:top-[85%] rounded-full bg-white/50 backdrop-blur-lg w-full overflow-scroll scroll-hidden max-md:w-[80%] lg:w-max max-lg:w-4/5 max-sm:w-80">
+        class="z-40 left-1/2 -translate-x-1/2 fixed shadow-sm p-3 top-2 max-lg:top-[85%] rounded-full bg-white/50 backdrop-blur-lg w-full overflow-scroll scroll-hidden max-md:w-[80%] lg:w-max max-lg:w-4/5 max-sm:w-80">
         <ul ref="menuList" class="inline-flex w-full gap-x-4">
             <li v-for="menu in menus" :key="menu.path" :ref="el => (menuRefs[menu.path] = el)"
                 class="w-28 rounded-full shrink-0 text-center p-2 transition-colors duration-300 cursor-pointer" :class="{
@@ -30,7 +30,7 @@ const emits = defineEmits(['jumpToSection'])
 const jumpToSection = (path) => {
     const section = document.getElementById(path)
     if (section) {
-        const offset = 80 // tinggi navbar (ubah sesuai kebutuhan)
+        const offset = 80
         const top = section.getBoundingClientRect().top + window.pageYOffset - offset
         window.scrollTo({ top, behavior: 'smooth' })
         emits('jumpToSection', path)
@@ -38,7 +38,6 @@ const jumpToSection = (path) => {
 }
 
 
-// refs untuk masing-masing item menu
 const menuRefs = {}
 
 onMounted(() => {
@@ -66,7 +65,6 @@ onMounted(() => {
     })
 })
 
-// Auto-scroll menu aktif (khusus untuk layar kecil)
 watch(activeSection, (newSection) => {
     const el = menuRefs[newSection]
     if (el && window.innerWidth < 768) {
