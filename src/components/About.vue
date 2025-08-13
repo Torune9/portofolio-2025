@@ -18,7 +18,7 @@
             </div>
 
             <!-- Image Section -->
-            <div class="h-80 w-full overflow-hidden bg-warm-gray relative group  md:w-80 lg:w-1/2 lg:h-[500px] md:shrink-0"
+            <div class="h-80 w-full overflow-hidden border border-primary relative group  md:w-80 lg:w-1/2 lg:h-[500px] md:shrink-0 blob"
                 id="img-wrapper">
                 <img src="@/assets/img/me.png" alt="profile-image"/>
             </div>
@@ -48,3 +48,22 @@ onMounted(() => {
     });
 });
 </script>
+
+<style scoped>
+.blob {
+  animation: blobMorph 8s ease-in-out infinite;
+}
+
+@keyframes blobMorph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+</style>
